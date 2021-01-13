@@ -1,0 +1,32 @@
+{% extends 'EcomApp/hbase.html' %}
+{% load static %}
+{% block content %}
+<div class="row mt-3">
+		<div class="card col-md-4 mx-2">
+			<h2 class="bg-primary text-white text-center p-2 border rounded my-2">Profile</h2>
+			<div class="card-body">
+				<img src="{% static customer.profile_pic.url %}" height="230px" width="100%">
+			</div>
+		</div>
+        <div class="card col-md mx-2">
+            <h2 class="bg-warning text-white text-center pt-2 border rounded my-2">Details</h2>
+            <table class="table table-bordered mx-3 my-2">
+              <tr>
+                  <th>User name</th>
+                  <td>{{request.user}}</td>
+              </tr>
+              <tr>
+                  <th>Address</th>
+                  <td>{{customer.address}}</td>
+              </tr>
+              <tr>
+                  <th>Mobile</th>
+                  <td>{{customer.mobile}}</td>
+              </tr>
+          </table>
+          <a href="{% url 'edit-profile' %}" class="btn btn-success">Update</a>
+        </div>
+      </div>
+
+
+{% endblock content %}

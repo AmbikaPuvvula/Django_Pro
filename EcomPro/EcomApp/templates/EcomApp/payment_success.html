@@ -1,0 +1,14 @@
+{% extends 'EcomApp/hbase.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container card card-body">
+  <h2 class="alert alert-success">Payment Successful !</h2>
+  <a href="{% url 'my-order' %}" class="btn btn-info btn-md">View Orders</a>
+  <a href="{% url 'customer-home' %}" class="btn btn-primary btn-md">Continue Shopping</a>
+</div>
+
+
+
+{% endblock content %}
